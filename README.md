@@ -20,16 +20,26 @@ Assumptions:
 
 ## Installation
 ```bash
+# Clone the repository
 git clone https://github.com/BeninASolomon/Defective-Product-Detector.git
 cd Defective-Product-Detector
+
+# Install required packages
 pip install -r requirements.txt
+
+# runs notebooks
+pip install notebook
+jupyter notebook
+run example.ipynb
 ```
 
 ## Usage (Class-based)
+```
 from utils import DefectDetector
 model = DefectDetector("defect_model.h5")
 result = model.predict("test_images/sample.jpg")
 print(result)
+```
 
 ## Evaluation Metrics
 The model is evaluated using:
