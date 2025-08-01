@@ -13,10 +13,14 @@ Assumptions:
 | -------------------------------| --------------------------------------------------|
 | `Script.ipynb`                 | Jupyter Notebook with training pipeline           |
 | `utils.py`                     | DefectDetector class for prediction               |
-| `defect_model.h5`              | Trained MobileNetV2 model weights                 |
 | `requirements.txt`             | Required Python packages                          |
 | `def.jpeg & non_def.jpeg`      | Sample images for quick prediction                |
 | `example.ipynb`                | Demo notebook to validate predictions using model |
+
+
+## Model Weights
+-[Download defect_model.h5](https://drive.google.com/uc?export=download&id=14rJlQLPYgbjiD3dqxWVxi4xjLsf4zQBl)
+(because it big to upload in github)
 
 ## Installation
 ```bash
@@ -36,16 +40,25 @@ run example.ipynb
 ## Usage (Class-based)
 ```
 from utils import DefectDetector
-model = DefectDetector("defect_model.h5")
-result = model.predict("test_images/sample.jpg")
+import tensorflow as tf
+import os
+import gdown
+#load the model from google drive because it big to upload in git
+model_path = "defect_model.h5"
+if not os.path.exists(model_path):
+    url = "https://drive.google.com/uc?export=download&id=14rJlQLPYgbjiD3dqxWVxi4xjLsf4zQBl"
+    gdown.download(url, model_path, quiet=False)
+    
+model = DefectDetector(model_path)
+result = model.predict("def.jpeg")
 print(result)
 ```
 
 ## Evaluation Metrics
 The model is evaluated using:
-Accuracy
-F1 Score
-Precision
-Recall
+- Accuracy
+- F1 Score
+- Precision
+- Recall
 
 
