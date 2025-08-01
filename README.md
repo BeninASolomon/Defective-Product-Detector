@@ -7,7 +7,10 @@ Assumptions:
 - Dataset is cleanly split into two classes: def_front and ok_front.
 - All images are preprocessed and resized to the same dimension (128x128).
 - defect_model.h5 is the trained model file for predictions.
-
+  
+## Dataset
+- [Download Dataset](https://www.kaggle.com/datasets/ravirajsinh45/real-life-industrial-dataset-of-casting-product)
+  
 ## Repository Structure
 | File                           | Description                                       |
 | -------------------------------| --------------------------------------------------|
@@ -19,7 +22,7 @@ Assumptions:
 
 
 ## Model Weights
--[Download defect_model.h5](https://drive.google.com/uc?export=download&id=14rJlQLPYgbjiD3dqxWVxi4xjLsf4zQBl)
+- [Download defect_model.h5](https://drive.google.com/uc?export=download&id=14rJlQLPYgbjiD3dqxWVxi4xjLsf4zQBl)
 (because it big to upload in github)
 
 ## Installation
